@@ -1,0 +1,26 @@
+<h1><%= @car.brand %></h1>
+<h2><%= @car.model %></h2>
+<h3><%= @car.year %></h3>
+<p><%= @car.fuel %></p>
+
+<hr>
+<% if @car.favourites.empty? %>
+  <%= simple_form_for [@car, @favourite] do |f| %>
+    <%= f.submit "Add to my Garage" %>
+  <% end %>
+<% else %>
+  <p>This car is currently in your Garage!</p>
+<% end %>
+<hr>
+
+<%= simple_form_for [@car, @review] do |f| %>
+  <%= f.input :comment %>
+  <%= f.input :rating, :collection => %w[0 1 2 3 4 5] %>
+  <%= f.submit "Send" %>
+<% end %>
+<hr>
+
+<% @car.reviews.each do |review| %>
+  <p> Comment: <%= review.comment %> | Rating: <%= review.rating %></p>
+<% end %>
+<hr>
