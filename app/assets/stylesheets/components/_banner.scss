@@ -1,0 +1,21 @@
+.banner {
+  color: white;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+}
+
+.banner-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  a {
+    width: 140px;
+  }
+}
