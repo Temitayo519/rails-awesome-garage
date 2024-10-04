@@ -2,6 +2,6 @@
 
 <% @cars.each do |car| %>
     <%= car.brand %>
-    <%= car.model %>
+    <%= link_to car.model, car_path(car) %>
     <hr>
 <% end %>

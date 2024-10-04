@@ -4,6 +4,7 @@
 <p><%= @car.fuel %></p>
 
 <hr>
+
 <% if @car.favourites.empty? %>
   <%= simple_form_for [@car, @favourite] do |f| %>
     <%= f.submit "Add to my Garage" %>
@@ -11,6 +12,9 @@
 <% else %>
   <p>This car is currently in your Garage!</p>
 <% end %>
+
+<p><%= link_to "Back to Cars", cars_path %></p>
+
 <hr>
 
 <%= simple_form_for [@car, @review] do |f| %>
@@ -23,4 +27,3 @@
 <% @car.reviews.each do |review| %>
   <p> Comment: <%= review.comment %> | Rating: <%= review.rating %></p>
 <% end %>
-<hr>
