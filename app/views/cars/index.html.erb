@@ -5,5 +5,6 @@
 <% @cars.each do |car| %>
     <%= car.brand %>
     <%= link_to car.model, car_path(car) %>
+    <%= image_tag car.image_url %>
     <hr>
 <% end %>
